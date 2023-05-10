@@ -1,1 +1,1 @@
-"https://eviv2206.github.io/vacancies-client",
+https://eviv2206.github.io/vacancies-client

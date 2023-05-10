@@ -1,0 +1,39 @@
+@import './../../../../common/ui/styles/colors';
+
+
+.NotFound {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 84px);
+
+  &_logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 25%;
+
+    h2 {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    &_button {
+      background-color: $blue100;
+      border: none;
+      border-radius: 8px;
+      width: 164px;
+      height: 42px;
+
+      a {
+        font-family: 'Open Sans', sans-serif;
+
+        color: $blue;
+        text-decoration: none;
+      }
+    }
+  }
+
+}

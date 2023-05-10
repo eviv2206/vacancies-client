@@ -1,0 +1,98 @@
+@import "../../../../common/ui/styles/colors";
+
+.VacanciesContainer {
+  display: flex;
+  margin-top: 40px;
+  margin-bottom: 44px;
+
+  input {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+  }
+
+  input::-webkit-input-placeholder {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    color: $grey500;
+  }
+
+  input:-ms-input-placeholder {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    color: $grey500;
+
+  }
+
+  input:-moz-placeholder {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    color: $grey500;
+
+  }
+
+  input::-moz-placeholder {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    color: $grey500;
+
+  }
+
+  @media screen and (max-width: 768px) {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+.FiltersContainer {
+  display: flex;
+  justify-content: flex-end;
+  width: 33vw;
+
+  &_wrapper {
+    margin-right: 28px;
+
+    @media screen and (max-width: 768px) {
+     margin-right: 0;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+.MainContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+  gap: 16px;
+
+  @media screen and (max-width: 768px) {
+    margin-top: 12px;
+
+  }
+
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  a:visited {
+    color: inherit;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 90%;
+  }
+
+  &_PageSwitcher_Container {
+    margin-top: 24px;
+  }
+
+}

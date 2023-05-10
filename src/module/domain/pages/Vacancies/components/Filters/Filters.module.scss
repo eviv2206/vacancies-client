@@ -1,0 +1,95 @@
+@import "../../../../../../common/ui/styles/colors";
+
+.Filter {
+  width: 315px;
+  height: 360px;
+  background: $white;
+  border: 1px solid $grey200;
+  border-radius: 12px;
+
+  @media screen and (max-width: 1024px) {
+    width: 29vw;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 90vw;
+
+  }
+
+  h3 {
+    margin: 0;
+  }
+
+  &_wrapper {
+    margin: 20px;
+  }
+
+  &_title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h3 {
+      font-weight: 700;
+    }
+
+  }
+
+  &_resetFilters {
+    display: flex;
+    align-items: center;
+    color: $grey500;
+    font-weight: 500;
+    gap: 9px;
+
+    p {
+      font-size: 14px;
+    }
+
+    &:hover * {
+      stroke: $blue400;
+      color: $blue400;
+      cursor: pointer;
+    }
+
+    &:active * {
+      stroke: $blue;
+      color: $blue;
+    }
+
+  }
+
+  &_dropdowns_wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 32px;
+    gap: 20px;
+
+    h4 {
+      margin: 0;
+    }
+  }
+
+  &_industry {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &_salary {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &_submit_wrapper {
+    display: flex;
+    margin-top: 20px;
+    height: 40px;
+
+    input {
+      width: 100% !important;
+      height: 100%;
+    }
+  }
+}

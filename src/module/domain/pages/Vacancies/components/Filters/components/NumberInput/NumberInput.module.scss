@@ -1,0 +1,61 @@
+@import "../../../../../../../../common/ui/styles/colors";
+
+.NumberInput {
+  display: flex;
+  height: 42px;
+
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input {
+    width: 100%;
+    outline: none;
+    border: none;
+    margin-left: 12px;
+    cursor: pointer;
+    caret-color: $blue;
+  }
+
+  &_input{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border: 1px solid $grey300;
+    border-radius: 8px;
+
+    &:focus-within, &:hover{
+      border-color: $blue;
+    }
+
+
+    &_controls{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-right: 14px;
+      height: 100%;
+      gap: 8px;
+    }
+
+    &_control {
+      display: flex;
+      align-items: center;
+
+      &:hover{
+        cursor: pointer;
+      }
+    }
+
+  }
+
+  &_revertArrow {
+    display: flex;
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+}

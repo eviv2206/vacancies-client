@@ -1,0 +1,50 @@
+@import "../../../../common/ui/styles/colors";
+
+.PageSwitcher {
+  display: flex;
+  gap: 8px;
+
+  button:hover{
+    border-color: $blue;
+    cursor: pointer;
+  }
+
+  button:disabled {
+    pointer-events: none;
+  }
+
+  &_element {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $white;
+    width: 32px;
+    height: 32px;
+    border: 1px solid $grey300;
+    border-radius: 4px;
+    font-family: 'Roboto', serif;
+    font-style: normal;
+    font-weight: 400;
+
+
+
+    &_active {
+      background-color: $blue;
+      color: $white;
+    }
+
+    &_arrow_disabled{
+      border-color: $grey200;
+
+      * {
+        fill: $grey300;
+      }
+    }
+
+    &_arrow_active {
+      * {
+        fill: $grey600;
+      }
+    }
+  }
+}

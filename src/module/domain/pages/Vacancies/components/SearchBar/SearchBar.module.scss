@@ -1,0 +1,48 @@
+@import "../../../../../../common/ui/styles/colors";
+
+.SearchBar {
+  display: flex;
+  align-items: center;
+  height: 48px;
+  width: 100%;
+  background-color: $white;
+  border: 1px solid $grey200;
+  border-radius: 8px;
+
+  &:focus-within{
+    border-color: $blue;
+  }
+
+  &_Container {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    margin: 0 14px;
+  }
+
+  img {
+    width: 13px;
+  }
+
+  input {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    width: 100%;
+    border: none;
+    padding: 0;
+    margin: 0;
+    caret-color: $blue;
+
+  }
+
+  input:focus {
+    outline: none;
+  }
+
+  &_search_wrapper {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+}

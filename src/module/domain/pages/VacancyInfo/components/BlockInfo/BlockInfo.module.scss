@@ -1,0 +1,16 @@
+@import "../../../../../../common/ui/styles/colors";
+
+.BlockInfo {
+  background-color: $white;
+  border: 1px solid $grey200;
+  border-radius: 12px;
+
+  &_Wrapper {
+    margin: 24px;
+    text-align: justify;
+  }
+
+  h2, h3, h4 {
+    font-weight: 700;
+  }
+}

@@ -1,0 +1,24 @@
+.Favorites {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+
+  &_Container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+    margin-top: 40px;
+    margin-bottom: 44px;
+    gap: 16px;
+
+    @media screen and (max-width: 768px) {
+      width: 90vw;
+    }
+  }
+}
+
+.PageSwitcher_Container {
+  margin-top: 88px;
+}

@@ -1,0 +1,30 @@
+@import "../../../../../../common/ui/styles/colors";
+
+.SearchButton {
+  width: 100%;
+
+  button:hover {
+    cursor: pointer;
+  }
+
+  input {
+    text-align: center;
+    height: 32px;
+    width: 83px;
+    color: $white;
+    background-color: $blue;
+    border-radius: 8px;
+    border: none;
+    font-family: 'Inter', sans-serif;
+
+    &:hover {
+      cursor: pointer;
+      background-color: $blue400;
+    }
+
+    &:active {
+      background-color: $blue600;
+    }
+  }
+
+}

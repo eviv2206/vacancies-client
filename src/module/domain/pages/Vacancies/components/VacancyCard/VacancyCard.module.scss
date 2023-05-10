@@ -1,0 +1,80 @@
+@import "../../../../../../common/ui/styles/colors";
+
+.VacancyCard {
+
+  width: 100%;
+  border: 1px solid $grey200;
+  border-radius: 12px;
+  background-color: $white;
+
+  &_wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 24px;
+    gap: 12px;
+  }
+
+  &_title {
+    display: flex;
+    justify-content: space-between;
+
+    &_favourite_selected * {
+      stroke: $blue;
+      fill: $blue;
+      cursor: pointer;
+    }
+
+    &_favourite * {
+      &:hover {
+        cursor: pointer;
+        stroke: $blue;
+        fill: $white;
+      }
+    }
+
+    &_text {
+
+      h3 {
+        font-weight: 600;
+        color: $blue;
+        margin: 0;
+      }
+
+      :hover {
+        cursor: pointer;
+        text-decoration: underline;
+      }
+
+
+    }
+  }
+
+
+  &_info {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    &_salary {
+      font-weight: 600;
+    }
+
+    &_typeOfWork {
+      font-weight: 400;
+    }
+  }
+
+  &_location {
+    display: flex;
+    gap: 11px;
+
+    img {
+      width: 13px;
+    }
+
+    p {
+      font-weight: 400;
+    }
+  }
+}

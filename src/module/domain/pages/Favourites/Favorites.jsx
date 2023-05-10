@@ -14,13 +14,13 @@ const Favorites = () => {
     const [ids, setIds] = useState(JSON.parse(localStorage.getItem('favourites')));
 
     const handleOpenClick = (id) => {
-        navigate(`/domain/vacancies/${id}`);
+        navigate(`/vacancies-client/domain/vacancies/${id}`);
     }
 
     useEffect(() => {
         debugger;
         if (ids.length === 0 && vacancies.length === 0){
-            navigate('/domain/not-found');
+            navigate('/vacancies-client/domain/not-found');
         }
     }, [ids, vacancies]);
 

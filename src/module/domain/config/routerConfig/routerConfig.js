@@ -1,9 +1,10 @@
 import Vacancies from "../../pages/Vacancies/Vacancies";
+import Favorites from "../../pages/Favourites/Favorites";
 
 
 export const ROUTER_PATHS = {
     vacancies: 'vacancies',
-    favourites: 'favourites',
+    favourites: 'favourites/page/1',
 };
 
 export const routerConfig = {
@@ -15,6 +16,6 @@ export const routerConfig = {
     catalog: {
         name: 'Избранное',
         path: ROUTER_PATHS.favourites,
-        element: <></>
+        element: <Favorites/>
     },
 };

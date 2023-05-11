@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect} from "react";
 import VacancyCard from "./components/VacancyCard/VacancyCard";
 import SearchBar from "./components/SearchBar/SearchBar";
 import s from './Vacancies.module.scss';
@@ -11,14 +11,14 @@ import {useDispatch, useSelector} from "react-redux";
 import {
     resetIsFiltered, resetKeyword, resetSalaryFrom, resetSalaryTo,
     resetSelectedIndustry,
-    resetVacancies,
+    resetVacancies, setTotalPages,
     setVacancies
 } from "../../../../common/ui/store/slices/vacancySearchSlice";
 
 const Vacancies = () => {
     const {id} = useParams();
     const pageNum = +id || 1;
-    const [totalPages, setTotalPages] = useState(0);
+    const totalPages = useSelector(state => state.vacancySearch.totalPages);
     const vacancies = useSelector(state => state.vacancySearch.vacancies);
     const isFiltered = useSelector(state => state.vacancySearch.isFiltered);
     const industry = useSelector(state => state.vacancySearch.selectedIndustry);
@@ -42,7 +42,7 @@ const Vacancies = () => {
                 keyword: keyword,
             });
             const totalItems = response.total;
-            setTotalPages(Math.ceil(totalItems / 4));
+            dispatch(setTotalPages(Math.ceil(totalItems / 4)));
             dispatch(setVacancies(response.objects));
         }
         if (vacancies === null) {

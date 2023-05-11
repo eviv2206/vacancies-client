@@ -2,9 +2,12 @@ import React from "react";
 import searchingManSVG from '../../../../assets/images/searchingMan.svg'
 import {Link} from "react-router-dom";
 import s from './NotFound.module.scss';
+import {NOT_FOUND_DICTIONARY} from "./NotFound.dictionary";
 
-const TEXT_NOT_FOUND = 'Упс, здесь еще ничего нет!';
-const TEXT_SEARCH_VACANCY = 'Поиск Вакансий';
+const {
+    TEXT_NOT_FOUND,
+    TEXT_SEARCH_VACANCY,
+} = NOT_FOUND_DICTIONARY;
 
 const NotFound = () => {
     return (

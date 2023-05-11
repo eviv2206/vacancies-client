@@ -9,9 +9,12 @@ import {
     setKeyword
 } from "../../../../../../common/ui/store/slices/vacancySearchSlice";
 import {useNavigate} from "react-router-dom";
+import {SEARCH_BAR_DICTIONARY} from "./SearchBar.dictionary";
 
-const PLACEHOLDER_INPUT = 'Введите название вакансии';
-const BUTTON_SEARCH = 'Поиск';
+const {
+    BUTTON_SEARCH,
+    PLACEHOLDER_INPUT,
+} = SEARCH_BAR_DICTIONARY;
 
 
 const SearchBar = () => {

@@ -54,7 +54,6 @@ const Favorites = () => {
             const totalItems = response.total;
             dispatch(setTotalFavouritePages(Math.ceil(totalItems / 4)));
             setVacancies(response.objects)
-            console.log(totalPages);
         }
 
         fetchData();

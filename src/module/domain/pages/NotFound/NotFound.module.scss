@@ -27,9 +27,17 @@
       width: 164px;
       height: 42px;
 
+      &:hover {
+        background: $blue400;
+        cursor: pointer;
+      }
+
+      &:active {
+        background: $blue600;
+      }
+
       a {
         font-family: 'Open Sans', sans-serif;
-
         color: $blue;
         text-decoration: none;
       }

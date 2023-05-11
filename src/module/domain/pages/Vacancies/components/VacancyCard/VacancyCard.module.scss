@@ -18,17 +18,25 @@
     display: flex;
     justify-content: space-between;
 
-    &_favourite_selected * {
-      stroke: $blue;
-      fill: $blue;
-      cursor: pointer;
+    &_favourite_selected {
+      height: 20px;
+
+      * {
+        stroke: $blue;
+        fill: $blue;
+        cursor: pointer;
+      }
     }
 
-    &_favourite * {
-      &:hover {
-        cursor: pointer;
-        stroke: $blue;
-        fill: $white;
+    &_favourite {
+      height: 20px;
+
+      * {
+        &:hover {
+          cursor: pointer;
+          stroke: $blue;
+          fill: $white;
+        }
       }
     }
 

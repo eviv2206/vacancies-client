@@ -79,6 +79,7 @@ const Filters = () => {
                             placeholder={CHOOSE_INDUSTRY}
                             value={industry}
                             setValue={(value) => dispatch(setSelectedIndustry(value))}
+                            dataElem="industry-select"
                         />
                     </div>
                     <div className={s.Filter_salary}>
@@ -87,16 +88,21 @@ const Filters = () => {
                             placeholder={FROM_TEXT}
                             value={salaryFrom}
                             setValue={(value) => dispatch(setSalaryFrom(value))}
+                            dataElem="salary-from-input"
                         />
                         <NumberInput
                             placeholder={TO_TEXT}
                             value={salaryTo}
                             setValue={(value) => dispatch(setSalaryTo(value))}
+                            dataElem="salary-to-input"
                         />
                     </div>
                 </div>
                 <div className={s.Filter_submit_wrapper}>
-                    <SearchButton value={SUBMIT}/>
+                    <SearchButton
+                        value={SUBMIT}
+                        dataElem="search-button"
+                    />
                 </div>
             </div>
         </form>

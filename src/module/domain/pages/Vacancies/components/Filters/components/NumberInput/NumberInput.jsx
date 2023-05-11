@@ -8,7 +8,8 @@ const NumberInput = (props) => {
     const {
         placeholder,
         value,
-        setValue
+        setValue,
+        dataElem
     } = props;
 
 
@@ -31,7 +32,14 @@ const NumberInput = (props) => {
     return (
         <div className={s.NumberInput}>
             <div className={s.NumberInput_input}>
-                <input type='text' value={value} placeholder={placeholder} onChange={handleOnChangeInput} inputMode='numeric'/>
+                <input
+                    type='text'
+                    value={value}
+                    placeholder={placeholder}
+                    onChange={handleOnChangeInput}
+                    inputMode='numeric'
+                    data-elem={dataElem}
+                />
                 <div className={s.NumberInput_input_controls}>
                     <div className={s.NumberInput_input_control} onClick={handleIncreaseValue}>
                         <ArrowUpSVG/>
@@ -49,6 +57,7 @@ NumberInput.propTypes = {
     placeholder: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,
     setValue: PropTypes.func.isRequired,
+    dataElem: PropTypes.string.isRequired,
 }
 
 export default NumberInput;

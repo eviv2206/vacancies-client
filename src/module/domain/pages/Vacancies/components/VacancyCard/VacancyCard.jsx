@@ -15,6 +15,7 @@ const VacancyCard = (props) => {
         town,
         currency,
         handleOpenClick,
+        dataElem,
     } = props;
 
     const getIsFavourite = () => {
@@ -45,7 +46,7 @@ const VacancyCard = (props) => {
     }
 
     return (
-        <div className={s.VacancyCard}>
+        <div className={s.VacancyCard} data-elem={dataElem}>
             <div className={s.VacancyCard_wrapper}>
                 <div className={s.VacancyCard_title}>
                     <div onClick={() => handleOpenClick(id)} className={s.VacancyCard_title_text}>
@@ -53,7 +54,9 @@ const VacancyCard = (props) => {
                     </div>
                     <div
                         onClick={handleSetFavourite}
-                        className={favourite ? s.VacancyCard_title_favourite_selected : s.VacancyCard_title_favourite}>
+                        className={favourite ? s.VacancyCard_title_favourite_selected : s.VacancyCard_title_favourite}
+                        data-elem={`vacancy-${id}-shortlist-button`}
+                    >
                         <StarIcon/>
                     </div>
                 </div>
@@ -80,6 +83,7 @@ VacancyCard.propTypes = {
     typeOfWork: PropTypes.string.isRequired,
     town: PropTypes.string.isRequired,
     handleOpenClick: PropTypes.func.isRequired,
+    dataElem: PropTypes.string.isRequired,
     salaryFrom: PropTypes.number,
     salaryTo: PropTypes.number,
 }

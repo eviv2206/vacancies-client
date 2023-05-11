@@ -10,6 +10,7 @@ const DropDown = (props) => {
     const {
         options,
         placeholder,
+        dataElem
     } = props;
 
     const [isOpenDropDown, setIsOpenDropDown] = useState(false);
@@ -34,6 +35,7 @@ const DropDown = (props) => {
                     placeholder={placeholder}
                     value={industry.title}
                     readOnly={true}
+                    data-elem={dataElem}
                 />
                 <ArrowDropDown/>
             </div>
@@ -58,6 +60,7 @@ const DropDown = (props) => {
 DropDown.propTypes = {
     options: PropTypes.array.isRequired,
     placeholder: PropTypes.string.isRequired,
+    dataElem: PropTypes.string.isRequired,
 }
 
 export default DropDown;

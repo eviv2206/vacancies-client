@@ -33,9 +33,16 @@ const SearchBar = () => {
         <form className={s.SearchBar} onSubmit={(event) => onSubmit(event)}>
             <div className={s.SearchBar_Container}>
                 <img src={searchSVG} alt='search'/>
-                <input placeholder={PLACEHOLDER_INPUT} onChange={(event) => dispatch(setKeyword(event.target.value))}/>
+                <input
+                    placeholder={PLACEHOLDER_INPUT}
+                    onChange={(event) => dispatch(setKeyword(event.target.value))}
+                    data-elem="search-input"
+                />
                 <div className={s.SearchBar_search_wrapper}>
-                    <SearchButton value={BUTTON_SEARCH}/>
+                    <SearchButton
+                        value={BUTTON_SEARCH}
+                        dataElem="search-button"
+                    />
                 </div>
             </div>
         </form>

@@ -83,6 +83,7 @@ const Vacancies = () => {
                         handleOpenClick={handleOpenClick}
                         salaryTo={vacancy.payment_to}
                         salaryFrom={vacancy.payment_from}
+                        dataElem={`vacancy-${vacancy.id}`}
                     />
                 )) : <Loader/>}
                 <div className={s.MainContainer_PageSwitcher_Container}>

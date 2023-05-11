@@ -19,8 +19,8 @@ const App = () => {
         <Provider store={setupStore()}>
             <DeviceTypeProvider>
                 <Routes>
-                    <Route path='*' element={<Navigate to='vacancies-client/domain/'/>}/>
-                    <Route path='vacancies-client/domain/*' element={<Domain/>}/>
+                    <Route path='*' element={<Navigate to='vacancies-client/domain'/>}/>
+                    <Route path='/vacancies-client/domain/*' element={<Domain/>}/>
                 </Routes>
             </DeviceTypeProvider>
         </Provider>

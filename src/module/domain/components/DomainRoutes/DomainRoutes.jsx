@@ -10,18 +10,17 @@ const DomainRoutes = () => {
     return (
         <Routes>
             <Route path={'/not-found'} element={<NotFound/>}/>
-            <Route path={'/vacancies/:id'} element={<VacancyInfo/>}/>
+            <Route path={'vacancies'} element={<Navigate to={'page/1'}/>}/>
             <Route path={'/vacancies/page/:id'} element={<Vacancies/>}/>
-            <Route path={'/vacancies'} element={<Navigate to={'page/1'}/>}/>
+            <Route path={'/vacancies/:id'} element={<VacancyInfo/>}/>
             <Route path={'/favourites/page/:id'} element={<Favorites/>}/>
-            <Route path={'/favourites'} element={<Navigate to={'page/1'}/>}/>
-            <Route path={'/*'} element={<Navigate to={'vacancies'}/>}/>
+            <Route path={'favourites'} element={<Navigate to={'page/1'}/>}/>
+            <Route path={'/'} element={<Navigate to={'vacancies/page/1'}/>}/>
             {
                 Object.values(routerConfig).map(({path, element}) => {
                     return <Route path={path} element={element} key={path}/>;
                 })
             }
-            <Route path='*' element={<NotFound/>}/>
         </Routes>
     );
 };

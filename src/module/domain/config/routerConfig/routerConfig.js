@@ -3,7 +3,7 @@ import Favorites from "../../pages/Favourites/Favorites";
 
 
 export const ROUTER_PATHS = {
-    vacancies: 'vacancies',
+    vacancies: 'vacancies/page/1',
     favourites: 'favourites/page/1',
 };
 

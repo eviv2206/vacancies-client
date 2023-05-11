@@ -18,7 +18,7 @@ const Favorites = () => {
     }
 
     useEffect(() => {
-        if (ids.length === 0 && vacancies.length === 0){
+        if (ids.length === 0 && (vacancies?.length === 0 || vacancies === null)){
             navigate('/vacancies-client/domain/not-found');
         }
     }, [ids, vacancies]);

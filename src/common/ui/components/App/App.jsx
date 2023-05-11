@@ -1,11 +1,20 @@
 import {DeviceTypeProvider} from "../../contexts/DeviceType";
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {Provider} from 'react-redux';
 import {setupStore} from '../../store/store'
 import {Navigate, Route, Routes} from "react-router-dom";
 import Domain from "../../../../module/domain/Domain";
 
 const App = () => {
+
+    const [itemLS] = useState(localStorage.getItem('favourites'));
+
+    useEffect(() => {
+        if (!itemLS) {
+            localStorage.setItem('favourites', "[]");
+        }
+    }, []);
+
     return (
         <Provider store={setupStore()}>
             <DeviceTypeProvider>

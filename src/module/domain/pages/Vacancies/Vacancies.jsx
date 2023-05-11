@@ -8,7 +8,12 @@ import {useNavigate, useParams} from "react-router-dom";
 import PageSwitcher from "../../components/PageSwitcher/PageSwitcher";
 import Loader from "../../../../common/ui/components/Loader/Loader";
 import {useDispatch, useSelector} from "react-redux";
-import {resetVacancies, setVacancies} from "../../../../common/ui/store/slices/vacancySearchSlice";
+import {
+    resetIsFiltered, resetKeyword, resetSalaryFrom, resetSalaryTo,
+    resetSelectedIndustry,
+    resetVacancies,
+    setVacancies
+} from "../../../../common/ui/store/slices/vacancySearchSlice";
 
 const Vacancies = () => {
     const {id} = useParams();
@@ -28,7 +33,6 @@ const Vacancies = () => {
     }
 
     useEffect(() => {
-        dispatch(resetVacancies());
         async function fetchData() {
             const response = await getVacancies({
                 page: pageNum - 1,
@@ -41,8 +45,20 @@ const Vacancies = () => {
             setTotalPages(Math.ceil(totalItems / 4));
             dispatch(setVacancies(response.objects));
         }
-        fetchData();
-    }, [pageNum]);
+        if (vacancies === null) {
+            fetchData();
+        }
+
+        if (vacancies?.length === 0){
+            dispatch(resetIsFiltered());
+            dispatch(resetSelectedIndustry());
+            dispatch(resetSalaryFrom());
+            dispatch(resetSalaryTo());
+            dispatch(resetVacancies());
+            dispatch(resetKeyword());
+            navigate('/vacancies-client/domain/not-found');
+        }
+    }, [pageNum, vacancies]);
 
     return (
         <div className={s.VacanciesContainer}>

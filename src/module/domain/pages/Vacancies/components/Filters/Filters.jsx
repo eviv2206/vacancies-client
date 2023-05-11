@@ -9,11 +9,10 @@ import {
     resetIsFiltered,
     resetSalaryFrom,
     resetSalaryTo,
-    resetSelectedIndustry, resetVacancies, setIsFiltered, setSalaryFrom, setSalaryTo, setSelectedIndustry, setVacancies,
+    resetSelectedIndustry, resetVacancies, setIsFiltered, setSalaryFrom, setSalaryTo, setSelectedIndustry,
 } from "../../../../../../common/ui/store/slices/vacancySearchSlice";
 import SearchButton from "../SearchButton/SearchButton";
 import {getIndustries} from "./api/getIndustries";
-import {getVacancies} from "../../../../api/getVacancies";
 import {useNavigate} from "react-router-dom";
 
 const {
@@ -33,7 +32,6 @@ const Filters = () => {
     const industry = useSelector(state => state.vacancySearch.selectedIndustry);
     const salaryFrom = useSelector(state => state.vacancySearch.salaryFrom);
     const salaryTo = useSelector(state => state.vacancySearch.salaryTo);
-    const keyword = useSelector(state => state.vacancySearch.keyword);
     const [industries, setIndustries] = useState([]);
     const navigate = useNavigate();
 
@@ -49,16 +47,9 @@ const Filters = () => {
 
     const onSubmit = async (event) => {
         event.preventDefault();
-        dispatch(resetVacancies());
-        const response = await getVacancies({
-            catalogues: industry.key,
-            payment_from: salaryFrom,
-            payment_to: salaryTo,
-            keyword: keyword,
-        });
         dispatch(setIsFiltered());
-        dispatch(setVacancies(response.objects));
-        navigate('/domain/vacancies/page/1');
+        dispatch(resetVacancies());
+        navigate('/vacancies-client/domain/vacancies/page/1');
     }
 
     const clearFilters = () => {
@@ -66,6 +57,8 @@ const Filters = () => {
         dispatch(resetSelectedIndustry());
         dispatch(resetSalaryFrom());
         dispatch(resetSalaryTo());
+        dispatch(resetVacancies())
+        navigate('/vacancies-client/domain/vacancies/page/1');
     }
 
     return (

@@ -13,7 +13,7 @@ const NotFound = () => {
                 <img src={searchingManSVG} alt='searching man'/>
                 <h2>{TEXT_NOT_FOUND}</h2>
                 <button className={s.NotFound_logo_button}>
-                    <Link to='/domain/vacancies'>
+                    <Link to='vacancies-client/domain/vacancies'>
                         {TEXT_SEARCH_VACANCY}
                     </Link>
                 </button>

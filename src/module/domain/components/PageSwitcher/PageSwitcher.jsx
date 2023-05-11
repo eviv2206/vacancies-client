@@ -6,16 +6,21 @@ import {ReactComponent as ArrowLeftSVG} from '../../../../assets/images/arrowLef
 import {ReactComponent as ArrowRightSVG} from '../../../../assets/images/arrowRight.svg';
 import s from './PageSwitcher.module.scss';
 import classNames from "classnames";
+import {useDispatch} from "react-redux";
+import {resetVacancies} from "../../../../common/ui/store/slices/vacancySearchSlice";
 
 
 const PageSwitcher = ({currentPage, totalPages}) => {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
+
     const {
         prevPage,
         nextPage,
         pageNumbers
     } = usePagination({currentPage, totalPages})
     const onPageChange = (page) => {
+        dispatch(resetVacancies());
         navigate(`./../${page}`);
     }
 

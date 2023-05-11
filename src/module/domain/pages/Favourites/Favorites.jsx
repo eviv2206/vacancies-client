@@ -18,7 +18,6 @@ const Favorites = () => {
     }
 
     useEffect(() => {
-        debugger;
         if (ids.length === 0 && vacancies.length === 0){
             navigate('/vacancies-client/domain/not-found');
         }

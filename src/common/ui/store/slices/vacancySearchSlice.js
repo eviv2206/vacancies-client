@@ -51,6 +51,9 @@ const  vacancySearchSlice= createSlice({
         },
         setKeyword: (state, action) => {
             state.keyword = action.payload;
+        },
+        resetKeyword: (state) => {
+            state.keyword = '';
         }
     },
 });
@@ -67,6 +70,7 @@ export const {
     setSalaryTo,
     resetSalaryTo,
     setKeyword,
+    resetKeyword,
 } = vacancySearchSlice.actions;
 
 export default vacancySearchSlice.reducer;

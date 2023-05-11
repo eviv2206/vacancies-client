@@ -2,14 +2,12 @@ import React from "react";
 import s from './SearchBar.module.scss';
 import searchSVG from "../../../../../../assets/images/Search.svg"
 import SearchButton from "../SearchButton/SearchButton";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import {
     resetVacancies,
     setIsFiltered,
-    setKeyword,
-    setVacancies
+    setKeyword
 } from "../../../../../../common/ui/store/slices/vacancySearchSlice";
-import {getVacancies} from "../../../../api/getVacancies";
 import {useNavigate} from "react-router-dom";
 
 const PLACEHOLDER_INPUT = 'Введите название вакансии';
@@ -17,10 +15,6 @@ const BUTTON_SEARCH = 'Поиск';
 
 
 const SearchBar = () => {
-    const industry = useSelector(state => state.vacancySearch.selectedIndustry);
-    const salaryFrom = useSelector(state => state.vacancySearch.salaryFrom);
-    const salaryTo = useSelector(state => state.vacancySearch.salaryTo);
-    const keyword = useSelector(state => state.vacancySearch.keyword);
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -28,15 +22,7 @@ const SearchBar = () => {
         event.preventDefault();
         dispatch(setIsFiltered());
         dispatch(resetVacancies());
-        const response = await getVacancies({
-            catalogues: industry.key,
-            payment_from: salaryFrom,
-            payment_to: salaryTo,
-            keyword: keyword,
-        });
-        dispatch(setIsFiltered());
-        dispatch(setVacancies(response.objects));
-        navigate('/domain/vacancies/page/1');
+        navigate('/vacancies-client/domain/vacancies/page/1');
     }
 
 

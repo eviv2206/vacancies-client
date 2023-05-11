@@ -29,7 +29,7 @@ const Vacancies = () => {
     const dispatch = useDispatch();
 
     const handleOpenClick = (id) => {
-        navigate(`/domain/vacancies/${id}`);
+        navigate(`/vacancies-client/domain/vacancies/${id}`);
     }
 
     useEffect(() => {

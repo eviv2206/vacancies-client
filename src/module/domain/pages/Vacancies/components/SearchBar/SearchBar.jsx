@@ -25,7 +25,7 @@ const SearchBar = () => {
         event.preventDefault();
         dispatch(setIsFiltered());
         dispatch(resetVacancies());
-        navigate('/vacancies-client/domain/vacancies/page/1');
+        navigate('/domain/vacancies/page/1');
     }
 
 

@@ -49,7 +49,7 @@ const Filters = () => {
         event.preventDefault();
         dispatch(setIsFiltered());
         dispatch(resetVacancies());
-        navigate('/vacancies-client/domain/vacancies/page/1');
+        navigate('/domain/vacancies/page/1');
     }
 
     const clearFilters = () => {
@@ -58,7 +58,7 @@ const Filters = () => {
         dispatch(resetSalaryFrom());
         dispatch(resetSalaryTo());
         dispatch(resetVacancies())
-        navigate('/vacancies-client/domain/vacancies/page/1');
+        navigate('/domain/vacancies/page/1');
     }
 
     return (

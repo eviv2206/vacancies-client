@@ -22,12 +22,12 @@ const Favorites = () => {
 
 
     const handleOpenClick = (id) => {
-        navigate(`/vacancies-client/domain/vacancies/${id}`);
+        navigate(`/domain/vacancies/${id}`);
     }
 
     useEffect(() => {
         if (ids?.length === 0 && (vacancies?.length === 0 || vacancies === null)){
-            navigate('/vacancies-client/domain/not-found');
+            navigate('/domain/not-found');
         }
     }, [ids, vacancies]);
 

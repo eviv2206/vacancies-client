@@ -32,7 +32,7 @@ const Vacancies = () => {
     const dispatch = useDispatch();
 
     const handleOpenClick = (id) => {
-        navigate(`/vacancies-client/domain/vacancies/${id}`);
+        navigate(`/domain/vacancies/${id}`);
     }
 
     useEffect(() => {
@@ -59,7 +59,7 @@ const Vacancies = () => {
             dispatch(resetSalaryTo());
             dispatch(resetVacancies());
             dispatch(resetKeyword());
-            navigate('/vacancies-client/domain/not-found');
+            navigate('/domain/not-found');
         }
     }, [pageNum, vacancies]);
 

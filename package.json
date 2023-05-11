@@ -1,7 +1,7 @@
 {
   "name": "vacancies-client",
   "version": "0.1.0",
-  "homepage": "https://eviv2206.github.io/vacancies-client",
+  "homepage": "https://eviv2206.github.io/vacancies-client/",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",

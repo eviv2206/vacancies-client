@@ -11,20 +11,23 @@ import {useDispatch, useSelector} from "react-redux";
 import {
     resetIsFiltered, resetKeyword, resetSalaryFrom, resetSalaryTo,
     resetSelectedIndustry,
-    resetVacancies, setTotalPages,
+    resetVacancies,
     setVacancies
 } from "../../../../common/ui/store/slices/vacancySearchSlice";
+import {setTotalVacancyPages} from "../../../../common/ui/store/slices/paginationSlice";
 
 const Vacancies = () => {
     const {id} = useParams();
     const pageNum = +id || 1;
-    const totalPages = useSelector(state => state.vacancySearch.totalPages);
+
+    const totalPages = useSelector(state => state.pagination.totalVacancyPages);
     const vacancies = useSelector(state => state.vacancySearch.vacancies);
     const isFiltered = useSelector(state => state.vacancySearch.isFiltered);
     const industry = useSelector(state => state.vacancySearch.selectedIndustry);
     const salaryFrom = useSelector(state => state.vacancySearch.salaryFrom);
     const salaryTo = useSelector(state => state.vacancySearch.salaryTo);
     const keyword = useSelector(state => state.vacancySearch.keyword);
+
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
@@ -42,7 +45,7 @@ const Vacancies = () => {
                 keyword: keyword,
             });
             const totalItems = response.total;
-            dispatch(setTotalPages(Math.ceil(totalItems / 4)));
+            dispatch(setTotalVacancyPages(Math.ceil(totalItems / 4)));
             dispatch(setVacancies(response.objects));
         }
         if (vacancies === null) {

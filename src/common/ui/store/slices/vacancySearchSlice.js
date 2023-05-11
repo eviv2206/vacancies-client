@@ -10,7 +10,6 @@ const initialState = {
     salaryFrom: '',
     salaryTo: '',
     keyword: '',
-    totalPages: 0,
 };
 
 const  vacancySearchSlice= createSlice({
@@ -56,9 +55,6 @@ const  vacancySearchSlice= createSlice({
         resetKeyword: (state) => {
             state.keyword = '';
         },
-        setTotalPages: (state, action) => {
-            state.totalPages = action.payload;
-        }
     },
 });
 
@@ -75,7 +71,6 @@ export const {
     resetSalaryTo,
     setKeyword,
     resetKeyword,
-    setTotalPages,
 } = vacancySearchSlice.actions;
 
 export default vacancySearchSlice.reducer;

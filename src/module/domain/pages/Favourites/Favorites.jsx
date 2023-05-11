@@ -4,14 +4,22 @@ import {useNavigate, useParams} from "react-router-dom";
 import {getVacancies} from "../../api/getVacancies";
 import VacancyCard from "../Vacancies/components/VacancyCard/VacancyCard";
 import PageSwitcher from "../../components/PageSwitcher/PageSwitcher";
+import {useDispatch, useSelector} from "react-redux";
+import {setTotalFavouritePages} from "../../../../common/ui/store/slices/paginationSlice";
+import Loader from "../../../../common/ui/components/Loader/Loader";
 
 const Favorites = () => {
     const {id} = useParams();
     const pageNum = +id || 1;
-    const [vacancies, setVacancies] = useState([]);
-    const navigate = useNavigate();
-    const [totalPages, setTotalPages] = useState(0);
+
+    const [vacancies, setVacancies] = useState(null);
     const [ids, setIds] = useState(JSON.parse(localStorage.getItem('favourites')));
+
+    const totalPages = useSelector(state => state.pagination.totalFavouritePages);
+    const dispatch = useDispatch();
+
+    const navigate = useNavigate();
+
 
     const handleOpenClick = (id) => {
         navigate(`/vacancies-client/domain/vacancies/${id}`);
@@ -36,6 +44,7 @@ const Favorites = () => {
     }, []);
 
     useEffect(() => {
+        setVacancies(null);
         async function fetchData() {
 
             const response = await getVacancies({
@@ -43,8 +52,9 @@ const Favorites = () => {
                 page: pageNum - 1
             });
             const totalItems = response.total;
-            setTotalPages(Math.ceil(totalItems / 4));
+            dispatch(setTotalFavouritePages(Math.ceil(totalItems / 4)));
             setVacancies(response.objects)
+            console.log(totalPages);
         }
 
         fetchData();
@@ -53,7 +63,7 @@ const Favorites = () => {
     return (
         <div className={s.Favorites}>
             <div className={s.Favorites_Container}>
-                {vacancies.map((vacancy) => (
+                {vacancies ? vacancies.map((vacancy) => (
                     <VacancyCard
                         key={vacancy.id}
                         id={vacancy.id}
@@ -65,7 +75,9 @@ const Favorites = () => {
                         salaryTo={vacancy.payment_to}
                         salaryFrom={vacancy.payment_from}
                     />
-                ))}
+                ))
+                    : <Loader/>
+                }
                 <div className={s.PageSwitcher_Container}>
                     <PageSwitcher totalPages={totalPages} currentPage={+pageNum}/>
                 </div>

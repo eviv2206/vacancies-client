@@ -46,10 +46,13 @@
       font-size: 14px;
     }
 
+    &:hover {
+      cursor: pointer;
+    }
+
     &:hover * {
       stroke: $blue400;
       color: $blue400;
-      cursor: pointer;
     }
 
     &:active * {

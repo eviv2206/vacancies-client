@@ -19,19 +19,19 @@
     caret-color: $blue;
   }
 
-  &_input{
+  &_input {
     display: flex;
     align-items: center;
     width: 100%;
     border: 1px solid $grey300;
     border-radius: 8px;
 
-    &:focus-within, &:hover{
+    &:focus-within, &:hover {
       border-color: $blue;
     }
 
 
-    &_controls{
+    &_controls {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -45,8 +45,17 @@
       display: flex;
       align-items: center;
 
-      &:hover{
+      &:hover {
+
+        path {
+          stroke: $blue400;
+        }
+
         cursor: pointer;
+      }
+
+      &:active path {
+        stroke: $blue600;
       }
     }
 
@@ -54,6 +63,7 @@
 
   &_revertArrow {
     display: flex;
+
     svg {
       transform: rotate(180deg);
     }

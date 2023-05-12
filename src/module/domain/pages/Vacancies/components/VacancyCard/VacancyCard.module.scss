@@ -21,7 +21,7 @@
     &_favourite_selected {
       height: 20px;
 
-      * {
+      path {
         stroke: $blue;
         fill: $blue;
         cursor: pointer;
@@ -31,13 +31,11 @@
     &_favourite {
       height: 20px;
 
-      * {
-        &:hover {
+      path:hover {
           cursor: pointer;
           stroke: $blue;
           fill: $white;
         }
-      }
     }
 
     &_text {

@@ -46,7 +46,6 @@ const Favorites = () => {
     useEffect(() => {
         setVacancies(null);
         async function fetchData() {
-
             const response = await getVacancies({
                 ids: ids,
                 page: pageNum - 1
@@ -73,6 +72,7 @@ const Favorites = () => {
                         handleOpenClick={handleOpenClick}
                         salaryTo={vacancy.payment_to}
                         salaryFrom={vacancy.payment_from}
+                        dataElem={`vacancy-${vacancy.id}`}
                     />
                 ))
                     : <Loader/>

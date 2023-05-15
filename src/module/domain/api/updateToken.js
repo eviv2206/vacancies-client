@@ -8,16 +8,16 @@ const CLIENT_ID = '2356';
 const HR = 0;
 
 export const updateToken = async () => {
-    const response = await axios.get('https://startup-summer-2023-proxy.onrender.com/2.0/oauth2/password/', {
+    const response = await axios.get('https://startup-summer-2023-proxy.onrender.com/2.0/oauth2/password',{
         headers: {
             "x-secret-key": SECRET_KEY,
         },
         params: {
-            "login": LOGIN,
-            "password": PASSWORD,
+            login: LOGIN,
+            password: PASSWORD,
             'client_id': CLIENT_ID,
             'client_secret': APP_ID,
-            'hr': HR,
+            hr: HR,
         }
     });
     return response.data.access_token;

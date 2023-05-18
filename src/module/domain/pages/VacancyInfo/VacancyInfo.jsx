@@ -29,6 +29,7 @@ const VacancyInfo = () => {
                         handleOpenClick={() => ({})}
                         salaryFrom={vacancy.payment_from}
                         salaryTo={vacancy.payment_to}
+                        dataElem={`vacancy-${vacancy.id}`}
                     />
                     <BlockInfo vacancyRichText={vacancy.vacancyRichText}/>
                 </div>

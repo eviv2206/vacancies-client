@@ -13,7 +13,7 @@ const Favorites = () => {
     const pageNum = +id || 1;
 
     const [vacancies, setVacancies] = useState(null);
-    const [ids, setIds] = useState(JSON.parse(localStorage.getItem('favourites')));
+    const [ids] = useState(JSON.parse(localStorage.getItem('favourites')));
 
     const totalPages = useSelector(state => state.pagination.totalFavouritePages);
     const dispatch = useDispatch();
@@ -32,18 +32,6 @@ const Favorites = () => {
     }, [ids, vacancies]);
 
     useEffect(() => {
-        const handleStorageChange = () => {
-            setIds(JSON.parse(localStorage.getItem('favourites')));
-        };
-
-        window.addEventListener('storage', handleStorageChange);
-
-        return () => {
-            window.removeEventListener('storage', handleStorageChange);
-        };
-    }, []);
-
-    useEffect(() => {
         setVacancies(null);
         async function fetchData() {
             const response = await getVacancies({
@@ -54,7 +42,6 @@ const Favorites = () => {
             dispatch(setTotalFavouritePages(Math.ceil(totalItems / 4)));
             setVacancies(response.objects)
         }
-
         fetchData();
     }, [pageNum, ids]);
 

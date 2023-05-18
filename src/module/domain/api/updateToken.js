@@ -11,6 +11,7 @@ export const updateToken = async () => {
     const response = await axios.get('https://startup-summer-2023-proxy.onrender.com/2.0/oauth2/password',{
         headers: {
             "x-secret-key": SECRET_KEY,
+            "X-Api-App-Id": APP_ID
         },
         params: {
             login: LOGIN,

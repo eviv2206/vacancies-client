@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/vacancies-client/static/css/main.bd7f7b86.css",
-    "main.js": "/vacancies-client/static/js/main.85c927cb.js",
+    "main.css": "/vacancies-client/static/css/main.9c2d5d18.css",
+    "main.js": "/vacancies-client/static/js/main.a8ab12d3.js",
     "static/js/787.908d8ecf.chunk.js": "/vacancies-client/static/js/787.908d8ecf.chunk.js",
     "static/media/searchingMan.svg": "/vacancies-client/static/media/searchingMan.e971983585ef9132b066d5ec6b8321e4.svg",
     "static/media/Star.svg": "/vacancies-client/static/media/Star.540f30acf091809d244954593acb0eb2.svg",
@@ -19,12 +19,12 @@
     "static/media/arrowDropDown.svg": "/vacancies-client/static/media/arrowDropDown.0a65a3fce9c6155adeb8289271261026.svg",
     "static/media/arrowLeft.svg": "/vacancies-client/static/media/arrowLeft.21272963cfa14de263907462eea678bc.svg",
     "static/media/scroll.svg": "/vacancies-client/static/media/scroll.fa8a1275988c2462e5bd.svg",
-    "main.bd7f7b86.css.map": "/vacancies-client/static/css/main.bd7f7b86.css.map",
-    "main.85c927cb.js.map": "/vacancies-client/static/js/main.85c927cb.js.map",
+    "main.9c2d5d18.css.map": "/vacancies-client/static/css/main.9c2d5d18.css.map",
+    "main.a8ab12d3.js.map": "/vacancies-client/static/js/main.a8ab12d3.js.map",
     "787.908d8ecf.chunk.js.map": "/vacancies-client/static/js/787.908d8ecf.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bd7f7b86.css",
-    "static/js/main.85c927cb.js"
+    "static/css/main.9c2d5d18.css",
+    "static/js/main.a8ab12d3.js"
   ]
 }

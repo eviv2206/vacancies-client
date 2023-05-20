@@ -22,7 +22,6 @@ export const getVacancyInfo = async (id) => {
         })
         return response.data;
     } catch (error) {
-        debugger;
         if (error.response.data.error.code === TOKEN_EXPIRED_CODE) {
             accessToken = await updateToken();
             localStorage.setItem('Authorization', `Bearer ${accessToken}`);

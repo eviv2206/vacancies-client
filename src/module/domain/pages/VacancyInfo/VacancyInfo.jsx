@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {getVacancyInfo} from "./api/getVacancyInfo";
-import VacancyCard from "../Vacancies/components/VacancyCard/VacancyCard";
+import VacancyCard from "../../components/VacancyCard/VacancyCard";
 import BlockInfo from "./components/BlockInfo/BlockInfo";
 import {useParams} from "react-router-dom";
 import s from './VacancyInfo.module.scss'

@@ -1,5 +1,5 @@
 import React, {useEffect} from "react";
-import VacancyCard from "./components/VacancyCard/VacancyCard";
+import VacancyCard from "../../components/VacancyCard/VacancyCard";
 import SearchBar from "./components/SearchBar/SearchBar";
 import s from './Vacancies.module.scss';
 import Filters from "./components/Filters/Filters";

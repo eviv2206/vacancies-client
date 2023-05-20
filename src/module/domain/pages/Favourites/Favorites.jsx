@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import s from './Favourites.module.scss';
 import {useNavigate, useParams} from "react-router-dom";
 import {getVacancies} from "../../api/getVacancies";
-import VacancyCard from "../Vacancies/components/VacancyCard/VacancyCard";
+import VacancyCard from "../../components/VacancyCard/VacancyCard";
 import PageSwitcher from "../../components/PageSwitcher/PageSwitcher";
 import {useDispatch, useSelector} from "react-redux";
 import {setTotalFavouritePages} from "../../../../common/ui/store/slices/paginationSlice";

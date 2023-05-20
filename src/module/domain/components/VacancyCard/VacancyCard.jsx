@@ -1,9 +1,9 @@
 import React, {useState} from "react";
 import PropTypes from "prop-types";
 import s from './VacancyCard.module.scss';
-import pointSVG from '../../../../../../assets/images/point.svg';
-import locationSVG from '../../../../../../assets/images/location.svg';
-import {ReactComponent as StarIcon} from '../../../../../../assets/images/Star.svg';
+import pointSVG from '../../../../assets/images/point.svg';
+import locationSVG from '../../../../assets/images/location.svg';
+import {ReactComponent as StarIcon} from '../../../../assets/images/Star.svg';
 
 const VacancyCard = (props) => {
     const {
